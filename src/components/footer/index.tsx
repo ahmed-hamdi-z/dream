@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-wrap text-left lg:text-left">
           <div className="w-full lg:w-6/12 px-4">
             <img className="w-24" src="/images/logo-dd.png" />
-            <h5 className="tracking-wide  my-3 text-white">
+            <h5 className="tracking-wide  my-4 text-white">
               With a passion for creativity and a commitment to excellence, we
               specialize in crafting bespoke events that leave lasting
               impressions. Whether you're planning an intimate gathering, a
@@ -43,15 +43,15 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
-            <div className="flex flex-wrap items-cente mt-5">
-              <div className="w-full lg:w-4/12 px-4 ">
-                <span className="block uppercase text-white text-sm font-semibold mb-2">
-                  Useful Links
+            <div className="flex flex-wrap items-cente mt-2">
+              <div className="w-full flex flex-col items-center text-center lg:w-4/12 px-4 ">
+                <span className="block capitalize text-white text-sm font-semibold mb-2">
+                  Information
                 </span>
                 <ul className="list-unstyled">
                   <li>
                     <a
-                      className="text-white hover:text-white font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-white  block pb-2 text-sm"
                       href="https://www.creative-tim.com/presentation?ref=njs-profile"
                     >
                       About Us
@@ -59,38 +59,31 @@ const Footer: React.FC = () => {
                   </li>
                   <li>
                     <a
-                      className="text-white hover:text-white font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-white  block pb-2 text-sm"
                       href="https://blog.creative-tim.com?ref=njs-profile"
                     >
-                      Blog
+                      Services
                     </a>
                   </li>
                   <li>
                     <a
-                      className="text-white hover:text-white font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-white  block pb-2 text-sm"
                       href="https://www.github.com/creativetimofficial?ref=njs-profile"
                     >
-                      Github
+                      Projects
                     </a>
                   </li>
-                  <li>
-                    <a
-                      className="text-white hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile"
-                    >
-                      Free Products
-                    </a>
-                  </li>
+                 
                 </ul>
               </div>
               <div className="w-full lg:w-4/12 px-4">
-                <span className="block uppercase text-white text-sm font-semibold mb-2">
+                <span className="block capitalize text-white text-sm font-semibold mb-2">
                   Contact
                 </span>
                 <ul className="list-unstyled">
                   <li>
                     <a
-                      className="text-white hover:text-white font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-white  block pb-2 text-sm"
                       href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile"
                     >
                       Phone
@@ -98,7 +91,7 @@ const Footer: React.FC = () => {
                   </li>
                   <li>
                     <a
-                      className="text-white hover:text-white font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-white  block pb-2 text-sm"
                       href="https://creative-tim.com/terms?ref=njs-profile"
                     >
                       Email
@@ -106,7 +99,7 @@ const Footer: React.FC = () => {
                   </li>
                   <li>
                     <a
-                      className="text-white hover:text-white font-semibold block pb-2 text-sm"
+                      className="text-white hover:text-white  block pb-2 text-sm"
                       href="https://creative-tim.com/privacy?ref=njs-profile"
                     >
                       Office address

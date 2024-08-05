@@ -36,13 +36,13 @@ export const eventProjects: EventProjects[] = [
 
 export const eventServices: EventServices[] = [
   {
-    title: "Event Design & Planning",
+    title: "Event Design ",
     description:
       "We will work with you to conceptualize, design, and plan all aspects of your event.",
     image: "/images/services.png",
   },
   {
-    title: "Venue Selection & Management",
+    title: "Venue Selection",
     description: "We will help you find the perfect venue and handle all logistics and communication with the venue staff.",
     image: "/images/services.png",
   },

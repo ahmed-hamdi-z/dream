@@ -37,7 +37,7 @@ const FlyoutNav = () => {
 
   return (
     <nav
-      className={`fixed w-[90%] top-8 mx-auto p-2 md:right-14 xl:right-14 right-5 rounded-xl z-50  text-black 
+      className={`absolute w-[90%] top-8 mx-auto p-2 md:right-14 xl:right-14 right-5 rounded-xl z-50  text-black 
       transition-all duration-300 ease-out lg:px-12 
       ${
         scrolled
@@ -45,9 +45,9 @@ const FlyoutNav = () => {
           : "bg-neutral-950/0  shadow-none bg-white"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
         <img src="/images/logo-d.png" />
-        <div className="hidden gap-80 lg:flex">
+        <div className="hidden gap-80 lg:flex ">
           <Links />
           <CTAs />
         </div>
@@ -61,14 +61,12 @@ const Links = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex items-center gap-2.5 font-semibold rtl:font-bien ">
+    <div className="flex items-center gap-3 font-monotype ">
       <Link to="/">{t("Home")}</Link>
       <a href="/#about">{t("About")}</a>
       <a href="/#services">{t("Services")}</a>
       <Link to="/portfolio">{t("Portfolio")}</Link>
-      <a href="/#clients">{t("Clients")}</a>
-  
-      <Link to="/contact">{t("Contact")}</Link>
+ 
     </div>
   );
 };
@@ -76,7 +74,7 @@ const Links = () => {
 const CTAs = () => {
   return (
     <div className="flex items-center gap-3">
-      <button className="rounded-lg border-2  px-4 py-2 font-semibold text-white bg-[#835782] ">
+      <button className="rounded-lg border-2  px-4 py-2 text-white bg-[#835782] ">
         Contact Us
       </button>
     </div>

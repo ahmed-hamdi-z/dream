@@ -7,10 +7,11 @@ const Projects: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <div className="flex flex-col items-center justify-center p-10">
-        <p className="text-lg mb-8 text-center px-4 md:px-0 text-black">
+        <p className="text-lg  text-center px-4 md:px-0 text-black font-monotype">
           Explore our Projects
         </p>
-        <h1 className="text-4xl font-bold mb-4 text-black">
+        <hr className="w-5 border-2 border-blackq pb-4" />
+        <h1 className="text-2xl font-bold mb-4 text-black">
           Explore Projects From Intimate Affairs To Grand Celebrations
         </h1>
       </div>
@@ -30,8 +31,8 @@ const Projects: React.FC = () => {
         ))}
       </div>
       <div className="flex items-center gap-3 mt-3">
-        <button className="rounded-lg border-2  px-4 py-2 font-semibold text-white bg-[#835782] ">
-          Explore Our Projects -
+        <button className="rounded-lg border-2  px-4 py-2 text-white bg-[#835782] ">
+          Explore Our Projects 
         </button>
       </div>
     </div>

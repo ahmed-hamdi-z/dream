@@ -13,6 +13,10 @@ export default {
       'serbg': "url('/images/ser-bg.jpeg')",
     },
     extend: {
+      fontFamily: {
+        monotype: ['Monotype Corsiva', "serif"],
+      
+      },
       colors,
     },
   },

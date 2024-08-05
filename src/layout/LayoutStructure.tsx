@@ -14,14 +14,15 @@ import { RootState } from "@/redux/store";
 import { useLocation } from "react-router-dom";
 
 
+
 // Components
 const About = lazy(() => import("@/components/about"));
 const Cards = lazy(() => import("@/components/cards"));
-// const Footer = lazy(() => import("@/components/footer"));
+const CountUpStats = lazy(() => import("@/components/counter"));
 const Vision = lazy(() => import("@/components/vision"));
 const Services = lazy(() => import("@/components/services"));
 const Projects = lazy(() => import("@/components/projects"));
-const Pricing = lazy(() => import("@/components/pricing"));
+
 const Mission = lazy(() => import("@/components/mission"));
 
 // Pages
@@ -50,14 +51,16 @@ const LayoutStructure: FC = () => {
             </Col>
           </Col>
           <Col xs="12">
-          <About />
+          <Vision />
           </Col>
           <Col xs="12">
           <Mission />
+          </Col>  
+          <Col className="bg-white" xs="12">
+          <About />
           </Col>
-          <Col xs="12">
-          <Vision />
-          </Col>
+        
+       
           <Col xs="12">
           <Services />
           </Col>
@@ -65,7 +68,7 @@ const LayoutStructure: FC = () => {
           <Projects />
           </Col>
           <Col xs="12">
-          <Pricing />
+       <CountUpStats />
           </Col>
       
           <Col xs="12">
