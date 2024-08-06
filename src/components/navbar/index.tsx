@@ -18,7 +18,6 @@ const MainNavbar: FC = () => {
   return (
     <>
       <FlyoutNav />
-
       <div className="relative">
         <SwipeCarousel />
       </div>
@@ -72,10 +71,11 @@ const Links = () => {
 };
 
 const CTAs = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex items-center gap-3">
       <button className="rounded-lg border-2  px-4 py-2 text-white bg-[#835782] ">
-        Contact Us
+       {t("Contact")}
       </button>
     </div>
   );

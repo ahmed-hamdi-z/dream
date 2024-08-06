@@ -46,8 +46,8 @@ const LayoutStructure: FC = () => {
       <main className={`main-layout direction-${direction} lang-${language}`}>
         <Row className="main-content">
           <Col xs="12">
-            <Col className="w-full ">
-            <Cards />
+            <Col className="w-full card-text ">
+            <Cards  />
             </Col>
           </Col>
           <Col xs="12">
@@ -59,8 +59,6 @@ const LayoutStructure: FC = () => {
           <Col className="bg-white" xs="12">
           <About />
           </Col>
-        
-       
           <Col xs="12">
           <Services />
           </Col>
