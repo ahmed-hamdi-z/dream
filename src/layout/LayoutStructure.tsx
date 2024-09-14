@@ -12,7 +12,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
 import { useLocation } from "react-router-dom";
-import SwipeCarousel from "@/components/carousel";
 
 // Components
 const About = lazy(() => import("@/components/about"));
@@ -21,8 +20,12 @@ const CountUpStats = lazy(() => import("@/components/counter"));
 const Vision = lazy(() => import("@/components/vision"));
 const Services = lazy(() => import("@/components/services"));
 const Projects = lazy(() => import("@/components/projects"));
-
 const Mission = lazy(() => import("@/components/mission"));
+const TopButton = lazy(() => import("@/components/top-btn"));
+const SwipeCarousel = lazy(() => import("@/components/carousel"));
+const WhatsAppIcon = lazy(() => import("@/components/whatsapp-icon"));
+
+
 
 // Pages
 const LayoutStructure: FC = () => {
@@ -75,6 +78,8 @@ const LayoutStructure: FC = () => {
           </Col>
         </Row>
       </main>
+      <WhatsAppIcon />
+      <TopButton />
     </>
   );
 };
