@@ -1,0 +1,17 @@
+.main-layout {
+  @apply bg-white min-h-[100vh] w-full flex overflow-hidden;
+}
+.main-layout.direction-ltr {
+  font-family: "Poppins", sans-serif;
+  direction: ltr;
+}
+.main-layout.direction-rtl {
+  font-family: "Poppins", sans-serif;
+  direction: rtl;
+}
+.main-layout .main-content {
+  @apply w-full m-0 p-0 bg-white overflow-hidden;
+}
+.main-layout .main-content > [class*=col-] {
+  @apply p-0 m-0;
+}

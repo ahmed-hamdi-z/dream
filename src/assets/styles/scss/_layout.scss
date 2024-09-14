@@ -1,0 +1,22 @@
+.main-layout {
+  @apply bg-white min-h-[100vh] w-full flex overflow-hidden;
+
+// Languages 
+  &.direction-ltr {
+    font-family: 'Poppins', sans-serif;
+    direction: ltr;
+  }
+
+  &.direction-rtl {
+    font-family: 'Poppins', sans-serif;
+    direction: rtl;
+  }
+  
+  .main-content {
+    @apply w-full m-0 p-0 bg-white overflow-hidden;
+
+    >[class*="col-"] {
+      @apply p-0 m-0;
+    }
+  }
+}

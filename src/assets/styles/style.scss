@@ -1,0 +1,15 @@
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Core */
+
+// Layout & components
+// IN BUILD MODE UNCOMMENT THIS CODE AND ADD COMMENT BOOTSTRAP IMPORT IN ( App.tsx )
+@import "./scss/layout";
+
+
+
