@@ -44,8 +44,8 @@ const Footer: React.FC = () => {
           </div>
           <div className="w-full lg:w-6/12 px-4 h-full">
             <div className="flex flex-wrap items-center mt-2">
-              <div className="w-full  flex flex-col md:mb-36 md:items-center items-start  text-center lg:w-4/12 px-4 "> 
-                <span className="block capitalize text-white text-sm font-semibold mb-2">
+              <div className="w-full  flex flex-col md:mb-36 md:items-center items-start text-center lg:w-4/12  "> 
+                <span className="block capitalize text-white text-sm font-bold ml-[-10px] mb-2">
                   {t("Information")}
                 </span>
                 <ul className="list-unstyled">
@@ -75,8 +75,8 @@ const Footer: React.FC = () => {
                   </li>
                 </ul>
               </div>
-              <div className="w-full lg:w-4/12 px-4">
-                <span className="block capitalize text-white text-sm font-semibold mb-2">
+              <div className="w-full lg:w-4/12 pt-3">
+                <span className="block capitalize text-white text-sm font-bold ml-[-10px] mb-2">
                   {t("Contact")}
                 </span>
                 <ul className="list-unstyled">

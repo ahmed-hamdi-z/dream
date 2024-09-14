@@ -1,7 +1,7 @@
 // Dependencies
 import { FC } from "react";
-import React, { Dispatch, SetStateAction, useState } from "react";
-import { FiMenu, FiArrowRight, FiX, FiChevronDown } from "react-icons/fi";
+import  {  useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 
 import {
   useMotionValueEvent,
@@ -9,9 +9,9 @@ import {
   useScroll,
   motion,
 } from "framer-motion";
-import useMeasure from "react-use-measure";
 
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguagesBtn from "../lang/lang-btn";
 
@@ -44,7 +44,7 @@ const FlyoutNav = () => {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
-        <img src="/images/logo.png" />
+       <a href="/"><img src="/images/logo.png" /></a> 
         <div className="hidden gap-80 lg:flex ">
           <Links />
           <CTAs />
@@ -81,74 +81,31 @@ const CTAs = () => {
   );
 };
 
-const MobileMenuLink = ({
-  children,
-  href,
-  FoldContent,
-  setMenuOpen,
-}: {
-  children: React.ReactNode;
-  href: string;
-  FoldContent?: React.ElementType;
-  setMenuOpen: Dispatch<SetStateAction<boolean>>;
-}) => {
-  const [ref, { height }] = useMeasure();
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="relative text-neutral-950">
-      {FoldContent ? (
-        <div
-          className="flex w-full cursor-pointer items-center justify-between border-b border-neutral-300 py-6 text-start text-2xl font-semibold"
-          onClick={() => setOpen((pv) => !pv)}
-        >
-        
-          <motion.div
-            animate={{ rotate: open ? "180deg" : "0deg" }}
-            transition={{
-              duration: 0.3,
-              ease: "easeOut",
-            }}
-          >
-            <FiChevronDown />
-          </motion.div>
-        </div>
-      ) : (
-        <Link
-          onClick={(e) => {
-            e.stopPropagation();
-            setMenuOpen(false);
-          }}
-          to={href}
-          className="flex w-full cursor-pointer items-center justify-between border-b border-neutral-300 py-6 text-start text-2xl font-semibold"
-        >
-          <span>{children}</span>
-          <FiArrowRight />
-        </Link>
-      )}
-      {FoldContent && (
-        <motion.div
-          initial={false}
-          animate={{
-            height: open ? height : "0px",
-            marginBottom: open ? "24px" : "0px",
-            marginTop: open ? "12px" : "0px",
-          }}
-          className="overflow-hidden"
-        >
-          <div ref={ref}>
-            <FoldContent />
-          </div>
-        </motion.div>
-      )}
-    </div>
-  );
-};
-
 const MobileMenu = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [scrollTarget, setScrollTarget] = useState<string | null>(null);
+  console.log(scrollTarget);
+  const handleScroll = (id: string, path?: string) => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      // If the section exists on the current page, scroll to it
+      window.scrollTo({
+        top: element.offsetTop - 100, // Adjust the offset if needed
+        behavior: "smooth",
+      });
+    } else if (path) {
+      // If the section doesn't exist on the current page, navigate to the correct page and store the target section ID
+      setScrollTarget(id);
+      navigate(path);
+    }
+  };
   const [open, setOpen] = useState(false);
+
   return (
-    <div className="block lg:hidden">
+    <div className="md:block lg:hidden flex">
+     
       <button onClick={() => setOpen(true)} className="block text-3xl">
         <FiMenu />
       </button>
@@ -159,53 +116,64 @@ const MobileMenu = () => {
             animate={{ x: 0 }}
             exit={{ x: "100vw" }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="fixed left-0 top-0 flex h-screen w-full flex-col bg-white"
+            className="fixed left-0 top-0 flex h-screen w-full flex-col bg-[#D4D4D4]"
           >
-            <div className="flex items-center justify-between p-6">
+            <div
+              className="flex items-center justify-between p-6"
+              onClick={() => setOpen(false)}
+            >
+            
+              <div className="flex bg-[#D4D4D4] p-4">
+                <div className="p-1">
+                  <LanguagesBtn />
+                </div>
+          
+              </div>
               <button onClick={() => setOpen(false)}>
                 <FiX className="text-3xl text-neutral-950" />
               </button>
             </div>
-            <div className="h-screen overflow-y-scroll bg-neutral-100 p-6">
-              {LINKS.map((l) => (
-                <MobileMenuLink
-                  key={l.text}
-                  href={l.href}
-                  setMenuOpen={setOpen}
-                >
-                  {l.text}
-                </MobileMenuLink>
-              ))}
-            </div>
-           
+            <div className="h-screen overflow-y-scroll bg-gradient-to-b from-gray-200 via-gray-300 to-gray-400 p-6">
+  <div onClick={() => setOpen(false)} className="flex flex-col items-center">
+    <div className="flex flex-col gap-4 text-3xl font-semibold text-center">
+      <button
+        onClick={() => handleScroll("top", "/")}
+        className="relative px-4 py-2 rounded-md bg-[#835782]  text-white  transition-transform transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+      >
+        {t("Home")}
+      </button>
+      <button
+        onClick={() => handleScroll("about", "/")}
+        className="relative px-4 py-2 rounded-md bg-[#835782]  text-white  transition-transform transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+      >
+        {t("About")}
+      </button>
+      <button
+        onClick={() => handleScroll("services", "/")}
+        className="relative px-4 py-2 rounded-md bg-[#835782]  text-white  transition-transform transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+      >
+        {t("Services")}
+      </button>
+      <Link
+        to="/portfolio"
+        className="relative px-4 py-2 rounded-md bg-[#835782]  text-white  inline-block transition-transform transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+      >
+        {t("Portfolio")}
+      </Link>
+      <Link
+        to="/contact"
+        className="relative px-4 py-2 rounded-md bg-[#835782]  text-white  inline-block transition-transform transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+      >
+        {t("Contact")}
+      </Link>
+    </div>
+  </div>
+</div>
+
           </motion.nav>
         )}
       </AnimatePresence>
     </div>
   );
 };
-
 export default MainNavbar;
-const LINKS = [
-  {
-    text: "Home",
-    href: "/",
-  },
-  {
-    text: "About Us",
-    href: "/about",
-  },
-
-  {
-    text: "Services",
-    href: "#",
-  },
-  {
-    text: "Portfolio",
-    href: "/portfolio",
-  },
-  {
-    text: "Contact Us",
-    href: "/contact",
-  },
-];
