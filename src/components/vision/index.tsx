@@ -27,7 +27,7 @@ const Vision: FC = () => {
         viewport={{ once: true }}
       >
         <h6 className="mb-1 font-monotype">{t("Our Vision")}</h6>
-        <hr className="w-5 ml-5  border-2 border-black pb-3" />
+        <hr className="w-5 ml-5 rtl:hidden border-2 border-black pb-3" />
         <h2 className="md:text-4xl text-3xl font-bold mb-2 ">
         {t("Inspiring Moments, Creating Memories")}
         </h2>

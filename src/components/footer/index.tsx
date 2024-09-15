@@ -103,10 +103,10 @@ const Footer: React.FC = () => {
                   <li className="text-[#fff]">
                     {t("Office address")}
                     <a
-                      className="text-white hover:text-white cursor-text text-sm flex my-3 ml-3"
-                      href="#"
+                      className="text-white hover:text-white cursor-pointer text-sm flex my-3 ml-3"
+                      href="https://www.google.com/maps/place/24%C2%B042'45.6%22N+46%C2%B041'02.5%22E/@24.7126732,46.6862021,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.7126732!4d46.6840134?hl=ar&entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D"
                     >
-                      <TbCurrentLocation className="w-6 h-6 text-[#fff] cursor-text" />{" "}
+                      <TbCurrentLocation className="w-6 h-6 text-[#fff] cursor-pointer" />{" "}
                       <span className=" mx-10 text-base absolute">Al olaya District - Musaad Al-Anqari</span>
                     </a>
                   </li>

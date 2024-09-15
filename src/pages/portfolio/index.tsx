@@ -18,7 +18,6 @@ interface ImageData {
   img: string;
   i: number;
 }
-
 declare global {
   interface Document {
     mozCancelFullScreen?: () => Promise<void>;
@@ -329,7 +328,7 @@ export const images: ImageType[] = [
     imgs: [
       "/images/p6.JPG",
       "/images/p9.JPG",
-      "/images/p12.JPG",
+      "/images/p2.JPG",
       "/images/p8.JPG",
     ],
   },

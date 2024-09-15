@@ -15,7 +15,7 @@ const Mission: FC = () => {
     >
       <div className="md:w-1/2 w-full p-4 mt-4">
         <h6 className="mb-1 font-monotype"> {t("Our Mission")}</h6>
-        <hr className="w-5 ml-5 border-2 border-black pb-3" />
+        <hr className="w-5 ml-5 border-2 rtl:hidden border-black pb-3" />
         <h2 className="text-4xl font-bold mb-2">
            {t("Crafting Unique and Exceptional Events")}
         </h2>
