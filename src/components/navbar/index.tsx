@@ -2,6 +2,8 @@
 import { FC } from "react";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
+
 
 import {
   useMotionValueEvent,
@@ -11,7 +13,6 @@ import {
 } from "framer-motion";
 
 
-import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguagesBtn from "../lang/lang-btn";
 
@@ -56,12 +57,32 @@ const FlyoutNav = () => {
 
 const Links = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [scrollTarget, setScrollTarget] = useState<string | null>(null);
+  console.log(scrollTarget);
+  const handleScroll = (id: string, path?: string) => {
+    const element = document.getElementById(id);
 
+    if (element) {
+      // If the section exists on the current page, scroll to it
+      window.scrollTo({
+        top: element.offsetTop - 100, // Adjust the offset if needed
+        behavior: "smooth",
+      });
+    } else if (path) {
+      // If the section doesn't exist on the current page, navigate to the correct page and store the target section ID
+      setScrollTarget(id);
+      navigate(path);
+    }
+  };
   return (
     <div className="flex items-center gap-3 font-monotype ">
-      <Link to="/">{t("Home")}</Link>
-      <a href="/#about">{t("About")}</a>
-      <a href="/#services">{t("Services")}</a>
+    
+      <button onClick={() => handleScroll("top", "/")}>{t("Home")}</button>
+      <button onClick={() => handleScroll("about", "/")}>{t("About")}</button>
+      <button onClick={() => handleScroll("services", "/")}>
+        {t("Services")}
+      </button>
       <Link to="/portfolio">{t("Portfolio")}</Link>
 
     </div>
