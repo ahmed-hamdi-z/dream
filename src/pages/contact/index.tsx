@@ -1,14 +1,39 @@
 import HeroSection from "@/components/hero-pages";
-import React from "react";
-
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { TbCurrentLocation } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
+import { IoCloseSharp } from "react-icons/io5";
+
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
+  const [message, setMessage] = useState<string | null>(null);
+  const form = useRef<HTMLFormElement>(null);
 
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_6jh3ses",
+          "template_hmkmn1u",
+          form.current,
+          "tyd3ZtB0OE8aPSBSo"
+        )
+        .then(
+          () => {
+            setMessage("تم تسجيل ردكم بنجاح");
+            form.current;
+          },
+          (error) => {
+            setMessage(`FAILED... ${error.text}`);
+          }
+        );
+    }
+  };
   return (
     <div className="overflow-hidden bg-gray-50">
       <div className="w-full">
@@ -64,7 +89,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="md:w-1/2 p-6 bg-[#F8F9FA]">
-          <form className="space-y-4">
+          <form className="space-y-4" ref={form} onSubmit={sendEmail}>
             <div className="flex flex-col">
               <label htmlFor="firstName" className="mb-1 text-[#835782]">
                 {t("First name")}
@@ -72,21 +97,22 @@ const Contact: React.FC = () => {
               <input
                 type="text"
                 id="firstName"
-                name="firstName"
+                name="first_name"
                 className="p-2 border border-gray-300 rounded"
                 placeholder={t("First name")}
               />
             </div>
             <div className="flex flex-col">
               <label htmlFor="lastName" className="mb-1 text-[#835782]">
-                {t("Last name")}
+                {t("Phone")}
               </label>
               <input
-                type="text"
-                id="lastName"
-                name="lastName"
+                type="tel"
+                id="phone"
+                name="phone"
                 className="p-2 border border-gray-300 rounded"
-                placeholder={t("Last name")}
+                placeholder={t("Phone")}
+                required
               />
             </div>
             <div className="flex flex-col">
@@ -96,9 +122,10 @@ const Contact: React.FC = () => {
               <input
                 type="email"
                 id="email"
-                name="email"
+                name="user_email"
                 className="p-2 border border-gray-300 rounded"
                 placeholder=  {t("Email")}
+                required
               />
             </div>
             <div className="flex flex-col">
@@ -117,7 +144,7 @@ const Contact: React.FC = () => {
                 <input
                   id="bordered-checkbox-1"
                   type="checkbox"
-                  value=""
+                  value={t("Weddings")}
                   name="select"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  outline-[#764095] focus:outline-[#764095]"
                 />
@@ -130,7 +157,7 @@ const Contact: React.FC = () => {
                 <input
                   id="bordered-checkbox-1"
                   type="checkbox"
-                  value=""
+                  value={t("Special occasions")}
                   name="select"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  outline-[#764095] focus:outline-[#764095]"
                 />
@@ -143,7 +170,7 @@ const Contact: React.FC = () => {
                 <input
                   id="bordered-checkbox-1"
                   type="checkbox"
-                  value=""
+                  value={t("Talk to Customer Service")} 
                   name="select"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  outline-[#764095] focus:outline-[#764095]"
                 />
@@ -156,12 +183,12 @@ const Contact: React.FC = () => {
                 <input
                   id="bordered-checkbox-1"
                   type="checkbox"
-                  value=""
+                  value= {t("Baby welcome celebration")}
                   name="select"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  outline-[#764095] focus:outline-[#764095]"
                 />
                 <label className="w-full  text-sm font-medium text-[#835782] ">
-                  {t("Consultation")}
+                  {t("Baby welcome celebration")}
                 </label>
               </div>
             </div>
@@ -172,6 +199,28 @@ const Contact: React.FC = () => {
               {t("Send Email")}
             </button>
           </form>
+          {message && (
+            <div className="fixed text-[#764095] top-56 flex items-center justify-center">
+              <div className="bg-white text-black p-6 rounded-lg shadow-lg w-96 h-32 flex flex-col items-center justify-center">
+                <button
+                  onClick={() => setMessage(null)}
+                  className="relative left-40 top-0 mb-4 font-bold  w-7 h-7 text-black text-3xl z-50"
+                  aria-label="Close"
+                >
+                  <IoCloseSharp />
+                </button>
+                <p className="text-lg font-semibold absolute top-3">
+                  {message}
+                </p>
+                <button
+                  onClick={() => setMessage(null)}
+                  className="bg-[#764095] text-white px-4 py-2 mt-3 hover:bg-indigo-700"
+                >
+                  {t("Close")}
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

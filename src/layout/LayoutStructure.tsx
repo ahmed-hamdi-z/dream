@@ -26,7 +26,6 @@ const SwipeCarousel = lazy(() => import("@/components/carousel"));
 const WhatsAppIcon = lazy(() => import("@/components/whatsapp-icon"));
 
 
-
 // Pages
 const LayoutStructure: FC = () => {
   const { direction, language } = useSelector(

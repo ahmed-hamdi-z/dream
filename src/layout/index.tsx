@@ -22,6 +22,8 @@ const LayoutStructure = lazy(() => import("./LayoutStructure"));
 const Contact = lazy(() => import("@/pages/contact"));
 const Portfolio = lazy(() => import("@/pages/portfolio"));
 const PortfolioDetails = lazy(() => import("@/pages/project-details"));
+const NotFound = lazy(() => import("@/pages/not-found"));
+
 
 const Layout: FC = () => {
   const { direction, language } = useSelector(
@@ -36,7 +38,7 @@ const Layout: FC = () => {
   }, [lng]);
   return (
 
-    <main className={` direction-${direction} lang-${language}`}>
+    <main className={`direction-${direction} lang-${language}`}>
       <div>
         <MainNavbar />
       </div>
@@ -45,6 +47,7 @@ const Layout: FC = () => {
         <Route path={CONFIG.contact_path} element={<Contact />} />
         <Route path={CONFIG.portfolio_path} element={<Portfolio />} />
         <Route path={CONFIG.portfolio_details_path} element={<PortfolioDetails />} />
+        <Route path="*" Component={NotFound} />
       </Routes>
       <div>
         <Footer />
