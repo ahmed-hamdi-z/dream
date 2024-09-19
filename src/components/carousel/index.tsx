@@ -90,7 +90,7 @@ const Images = ({ imgIndex }: { imgIndex: number }) => {
             transition={SPRING_OPTIONS}
             className="aspect-video w-full h-screen shrink-0 rounded-xl object-cover"
           >
-            <div className="w-full flex flex-col rtl:items-end justify-center md:mt-64 mt-96 ml-3 md:ml-10 rtl:ml-[-40px] ">
+            <div className="w-full flex flex-col rtl:items-end justify-center md:mt-64 mt-96 ml-3 md:ml-10 rtl:ml-[-10px] ">
               <h3 className="text-white font-monotype mx-2 mb-2" >{t("Creating Unforgettable Experiences")}</h3>
               <h1 className="text-white text-5xl md:text-6xl md:w-5/12  rtl:text-right">
                 {t("To be the premier event planning service, inspiring lasting memories.")}

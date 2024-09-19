@@ -13,6 +13,7 @@ import {
 import { IoCloseSharp } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 import HeroSection from "@/components/hero-pages";
+import WhatsAppIcon from "@/components/whatsapp-icon";
 
 interface ImageData {
   img: string;
@@ -259,6 +260,7 @@ const Gallery: FC = () => {
           </ResponsiveMasonry>
         </div>
       </div>
+      <WhatsAppIcon />
     </>
   );
 };

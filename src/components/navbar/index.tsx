@@ -77,7 +77,7 @@ const Links = () => {
   };
   return (
     <div className="flex items-center gap-3 font-monotype ">
-    
+
       <button onClick={() => handleScroll("top", "/")}>{t("Home")}</button>
       <button onClick={() => handleScroll("about", "/")}>{t("About")}</button>
       <button onClick={() => handleScroll("services", "/")}>

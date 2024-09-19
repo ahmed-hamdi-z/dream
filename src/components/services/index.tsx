@@ -46,7 +46,7 @@ const Services: React.FC = () => {
                 {t("services disc")}
               </p>
             </div>
-          
+
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 100 }}
@@ -69,7 +69,7 @@ const Services: React.FC = () => {
               className="p-2 rounded-lg flex flex-col-reverse items-center justify-center"
               variants={itemVariants}
             >
-              <div className="md:mx-8 mx-2.5 rounded-2xl mt-[-40px] hover:bg-[#835782] group-hover:bg-[linear-gradient(45deg,#835782,#D296CC)]  group bg-white ">
+              <div className="md:mx-8 mx-2.5 rounded-2xl mt-[-40px] hover:bg-[#835782] group-hover:bg-[linear-gradient(45deg,#835782,#D296CC)] group bg-white z-50">
                 <div className=" group-hover:bg-[linear-gradient(45deg,#835782,#D296CC)] p-3 bg-white rounded-2xl">
                   <h2 className="text-xl font-semibold group-hover:text-white ">
                     {t(service.title)}
