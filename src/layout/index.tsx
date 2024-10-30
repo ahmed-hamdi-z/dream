@@ -23,11 +23,12 @@ const Contact = lazy(() => import("@/pages/contact"));
 const Portfolio = lazy(() => import("@/pages/portfolio"));
 const PortfolioDetails = lazy(() => import("@/pages/project-details"));
 const NotFound = lazy(() => import("@/pages/not-found"));
+const Ad = lazy(() => import("@/pages/ad"));
 
 
 const Layout: FC = () => {
   const { direction, language } = useSelector(
-    (state: RootState) => state.settings
+    (state: RootState) => state.settings 
   );
 
   const lng = Cookies.get("i18next") || "en";
@@ -47,6 +48,7 @@ const Layout: FC = () => {
         <Route path={CONFIG.contact_path} element={<Contact />} />
         <Route path={CONFIG.portfolio_path} element={<Portfolio />} />
         <Route path={CONFIG.portfolio_details_path} element={<PortfolioDetails />} />
+        <Route path={CONFIG.ad_path} element={<Ad />} />
         <Route path="*" Component={NotFound} />
       </Routes>
       <div>

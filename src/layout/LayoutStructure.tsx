@@ -66,7 +66,7 @@ const LayoutStructure: FC = () => {
           <Col xs="12">
             <Services />
           </Col>
-          <Col className="bg-[#835782] mt-5" xs="12">
+          <Col className="mt-2 bg-[linear-gradient(360deg,#835782,#d16ba5)] " xs="12">
             <CountUpStats />
           </Col>
           <Col xs="12">

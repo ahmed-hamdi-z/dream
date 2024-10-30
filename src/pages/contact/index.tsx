@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  className="p-2 border border-gray-300 rounded"
+                  className="p-2 border border-gray-300 rounded placeholder:rtl:text-right"
                   placeholder={t("Phone")}
                   required
                 />

@@ -36,14 +36,14 @@ const FlyoutNav = () => {
 
   return (
     <nav
-      className={`absolute w-[90%] top-8 mx-auto p-2 md:right-14 xl:right-14 right-5 rounded-xl z-50  text-[#835782] 
+      className={`absolute w-[90%] top-8 p-2 md:right-14 xl:right-14 right-5 rounded-xl z-50  text-[#835782] 
       transition-all duration-300 ease-out lg:px-12 
       ${scrolled
           ? "bg-white py-3 shadow-xl"
           : "bg-neutral-950/0  shadow-none bg-white"
         }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
+      <div className="mx-2 flex max-w-7xl items-center justify-between  ">
         <a href="/"><img src="/images/logo.png" /></a>
         <div className="hidden gap-80 lg:flex ">
           <Links />
@@ -128,7 +128,6 @@ const MobileMenu = () => {
       <div className="flex flex-row-reverse gap-4">
         <button onClick={() => setOpen(true)} className="block text-3xl">
           <FiMenu />
-
         </button>
         <div className="p-1">
           <LanguagesBtn />

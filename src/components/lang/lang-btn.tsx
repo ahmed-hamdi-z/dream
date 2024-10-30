@@ -22,9 +22,9 @@ const LanguagesBtn: FC = () => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center ">
       <button
-        className="bg-[#835782] text-white ml-3 px-2 py-1 overflow-y-hidden"
+        className="bg-[#835782] text-white ml-3 px-2 py-1 overflow-y-hidden rounded-md"
         onClick={toggleLanguage}
       >
         {language === "en" ? "AR" : "EN"}

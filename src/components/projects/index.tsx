@@ -17,8 +17,8 @@ const Projects: React.FC = () => {
         <p className="text-lg text-center text-[#495057] font-monotype">
             {t("Explore our Projects")}
         </p>
-        <hr className="w-5 border-2 border-black pb-4" />
-        <h1 className="text-2xl font-bold mb-4 text-[#495057]">
+        <hr className="w-5 border-2 border-black pb-3" />
+        <h1 className="text-2xl font-bold mb-3 text-[#495057] rtl:text-right">
             {t("Explore")}
         </h1>
       </div>

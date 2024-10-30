@@ -35,13 +35,9 @@ const AboutComp: FC = () => {
         <h2 className="text-4xl font-bold mb-2">
           {t("A Passion for Creating Exceptional Events")}
         </h2>
-
+        
         <p className="text-gray-700">{t("about disc")}</p>
-        <div className="flex items-center gap-3 mt-3">
-          <button className="rounded-lg border-2 px-4 py-2.5 font-semibold text-white bg-[#835782]">
-            {t("Explore Services")}
-          </button>
-        </div>
+   
       </motion.div>
     </div>
   );

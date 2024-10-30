@@ -69,9 +69,15 @@ const Services: React.FC = () => {
               className="p-2 rounded-lg flex flex-col-reverse items-center justify-center"
               variants={itemVariants}
             >
-              <div className="md:mx-8 mx-2.5 rounded-2xl mt-[-40px] hover:bg-[#835782] group-hover:bg-[linear-gradient(45deg,#835782,#D296CC)] group bg-white z-50">
-                <div className=" group-hover:bg-[linear-gradient(45deg,#835782,#D296CC)] p-3 bg-white rounded-2xl">
-                  <h2 className="text-xl font-semibold group-hover:text-white ">
+
+              <div className="flex flex-col items-center justify-center rounded-2xl hover:bg-[#835782] group-hover:bg-[linear-gradient(45deg,#835782,#D296CC)] group  z-50">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-96 object-cover rounded-xl border-8 border-white group-hover:text-white"
+                />
+                <div className="group-hover:bg-[linear-gradient(45deg,#835782,#D296CC)] p-3 bg-white rounded-2xl w-[90%] mt-[-40px]">
+                  <h2 className="text-xl text-[#495057] font-semibold group-hover:text-white ">
                     {t(service.title)}
                   </h2>
                   <p className="text-[#495057] group-hover:text-white w-full tracking-wider mt-2 text-base md:text-sm lg:text-sm transition-all duration-300 ease-in-out">
@@ -80,11 +86,6 @@ const Services: React.FC = () => {
                 </div>
               </div>
 
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-96 h-96 object-cover rounded-xl border-[10px] border-white group-hover:text-white"
-              />
             </motion.div>
           ))}
         </motion.div>

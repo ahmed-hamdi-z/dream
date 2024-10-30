@@ -9,10 +9,9 @@ const CountUpStats: FC = () => {
   const { t } = useTranslation();
   
   return (
-    <div className="flex flex-col items-center justify-between rtl:font-bien md:my-32 my-14 font-monotype bg-[#835782] ">
-     
+    <div className="flex flex-col justify-between rtl:font-bien my-24 font-monotype ">
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:gap-24 md:gap-16 gap-12 text-[#fff] text-xl">
+      <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 md:grid-cols-4 text-[#fff] text-xl">
         <div className=" ">
           {" "}
           <Stat num={9} suffix="" subheading={t("Years Of Experience")} />
